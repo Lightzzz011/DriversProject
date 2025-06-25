@@ -117,7 +117,3 @@ A route optimization tool for delivery drivers using Dijkstra's algorithm and TS
 - `mark-messages-read` - Mark messages as read
 - `typing` - Indicate typing status
 - `leave-delivery-chat` - Leave a delivery chat room
-
-## License
-
-MIT
