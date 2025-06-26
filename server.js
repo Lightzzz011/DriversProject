@@ -80,7 +80,16 @@ app.get('/health', (req, res) => {
 
 // Root route - serve the frontend
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  fs.readFile(indexPath, 'utf8', (err, data) => {
+    if (err) {
+      logger.error(`Error reading index.html: ${err.message}`);
+      return res.status(500).send('Error loading page.');
+    }
+    const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY || '';
+    const modifiedHtml = data.replace('YOUR_GOOGLE_MAPS_API_KEY_PLACEHOLDER', googleMapsApiKey);
+    res.send(modifiedHtml);
+  });
 });
 
 // 404 handler
