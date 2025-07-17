@@ -12,7 +12,6 @@ function initializeChat(userId, userType) {
   //   auth: {
   //     userId: userId,
   //     userType: userType // 'driver', 'customer', or 'admin'
-  //   }
   // });
   
   // For demo purposes, we'll simulate socket events
@@ -196,7 +195,6 @@ function showTypingIndicator(user) {
   if (existingIndicator) {
     existingIndicator.remove();
   }
-  
   // Create typing indicator element
   const indicatorElement = document.createElement('div');
   indicatorElement.className = 'typing-indicator';
