@@ -56,7 +56,7 @@ function joinDeliveryChat(deliveryId) {
 function leaveDeliveryChat(deliveryId) {
   // In a real implementation, this would emit a socket event
   // socket.emit('leave-delivery-chat', { deliveryId });
-  
+
   console.log('Left delivery chat room:', deliveryId);
   currentDeliveryId = null;
 }
